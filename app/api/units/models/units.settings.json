@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "units",
+  "info": {
+    "name": "Units"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "unit_name": {
+      "type": "string",
+      "required": true
+    },
+    "unit_name_long": {
+      "type": "string"
+    },
+    "news_items": {
+      "collection": "news-items"
+    },
+    "resource_categories": {
+      "collection": "resource-categories"
+    },
+    "invite_code": {
+      "type": "string",
+      "private": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resource_emails",
+  "info": {
+    "name": "Resource_emails"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "unit_resrouce": {
+      "model": "unit-resrouces"
+    }
+  }
+}
