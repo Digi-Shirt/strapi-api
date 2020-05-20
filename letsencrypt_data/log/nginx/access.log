@@ -1,5 +1,0 @@
-70.130.124.54 - - [20/May/2020:19:45:36 +0100] "GET /admin/ HTTP/2.0" 200 418 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"
-70.130.124.54 - - [20/May/2020:19:45:36 +0100] "GET /favicon.ico HTTP/2.0" 200 418 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"
-70.130.124.54 - - [20/May/2020:19:45:43 +0100] "GET / HTTP/2.0" 200 418 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"
-70.130.124.54 - - [20/May/2020:19:46:12 +0100] "GET / HTTP/2.0" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"
-70.130.124.54 - - [20/May/2020:19:46:15 +0100] "GET /admin/ HTTP/2.0" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"
