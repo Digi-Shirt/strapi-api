@@ -25,3 +25,30 @@ services:
       - ./data:/data/postgres
     ports:
       - '5432:5432'
+
+  letsencrypt:
+    image: linuxserver/letsencrypt
+    container_name: letsencrypt
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - URL=api.digi-shirt.net
+        #- SUBDOMAINS=api
+      - VALIDATION=http
+      - DNSPLUGIN=cloudflare #optional
+      - PROPAGATION= #optional
+      - DUCKDNSTOKEN= #optional
+      - EMAIL= #optional
+      - DHLEVEL=2048 #optional
+      - ONLY_SUBDOMAINS=false #optional
+      - EXTRA_DOMAINS= #optional
+      - STAGING=false #optional
+    volumes:
+      - /root/strapi-api/letsencrypt_data:/config
+    ports:
+      - 443:443
+      - 80:80 #optional
+    restart: unless-stopped
