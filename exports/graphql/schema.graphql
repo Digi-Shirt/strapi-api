@@ -1,0 +1,1152 @@
+input createFileInput {
+  data: FileInput
+}
+
+type createFilePayload {
+  file: UploadFile
+}
+
+input createNewsItemInput {
+  data: NewsItemInput
+}
+
+type createNewsItemPayload {
+  newsItem: NewsItems
+}
+
+input createResourceCategoryInput {
+  data: ResourceCategoryInput
+}
+
+type createResourceCategoryPayload {
+  resourceCategory: ResourceCategories
+}
+
+input createResourceEmailInput {
+  data: ResourceEmailInput
+}
+
+type createResourceEmailPayload {
+  resourceEmail: ResourceEmails
+}
+
+input createResourcePhoneInput {
+  data: ResourcePhoneInput
+}
+
+type createResourcePhonePayload {
+  resourcePhone: ResourcePhones
+}
+
+input createRoleInput {
+  data: RoleInput
+}
+
+type createRolePayload {
+  role: UsersPermissionsRole
+}
+
+input createUnitInput {
+  data: UnitInput
+}
+
+type createUnitPayload {
+  unit: Units
+}
+
+input createUnitResrouceInput {
+  data: UnitResrouceInput
+}
+
+type createUnitResroucePayload {
+  unitResrouce: UnitResrouces
+}
+
+input createUserInput {
+  data: UserInput
+}
+
+type createUserPayload {
+  user: UsersPermissionsUser
+}
+
+"""
+A date string, such as 2007-12-03, compliant with the `full-date` format
+outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for
+representation of dates and times using the Gregorian calendar.
+"""
+scalar Date
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the
+`date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO
+8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar DateTime
+
+input deleteFileInput {
+  where: InputID
+}
+
+type deleteFilePayload {
+  file: UploadFile
+}
+
+input deleteNewsItemInput {
+  where: InputID
+}
+
+type deleteNewsItemPayload {
+  newsItem: NewsItems
+}
+
+input deleteResourceCategoryInput {
+  where: InputID
+}
+
+type deleteResourceCategoryPayload {
+  resourceCategory: ResourceCategories
+}
+
+input deleteResourceEmailInput {
+  where: InputID
+}
+
+type deleteResourceEmailPayload {
+  resourceEmail: ResourceEmails
+}
+
+input deleteResourcePhoneInput {
+  where: InputID
+}
+
+type deleteResourcePhonePayload {
+  resourcePhone: ResourcePhones
+}
+
+input deleteRoleInput {
+  where: InputID
+}
+
+type deleteRolePayload {
+  role: UsersPermissionsRole
+}
+
+input deleteUnitInput {
+  where: InputID
+}
+
+type deleteUnitPayload {
+  unit: Units
+}
+
+input deleteUnitResrouceInput {
+  where: InputID
+}
+
+type deleteUnitResroucePayload {
+  unitResrouce: UnitResrouces
+}
+
+input deleteUserInput {
+  where: InputID
+}
+
+type deleteUserPayload {
+  user: UsersPermissionsUser
+}
+
+input editFileInput {
+  name: String
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String
+  ext: String
+  mime: String
+  size: Float
+  url: String
+  previewUrl: String
+  provider: String
+  provider_metadata: JSON
+  related: [ID]
+}
+
+input editNewsItemInput {
+  title: String
+  article: String
+  unit: ID
+}
+
+input editResourceCategoryInput {
+  name: String
+  unit: ID
+  unit_resources: [ID]
+}
+
+input editResourceEmailInput {
+  email: String
+  unit_resrouce: ID
+}
+
+input editResourcePhoneInput {
+  phone_number: String
+  unit_resrouce: ID
+}
+
+input editRoleInput {
+  name: String
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+}
+
+input editUnitInput {
+  unit_name: String
+  unit_name_long: String
+  news_items: [ID]
+  resource_categories: [ID]
+  invite_code: String
+}
+
+input editUnitResrouceInput {
+  name: String
+  details: String
+  resource_category: ID
+  resource_emails: [ID]
+  resource_phones: [ID]
+}
+
+input editUserInput {
+  username: String
+  email: String
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+}
+
+input FileInput {
+  name: String!
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String!
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  related: [ID]
+}
+
+type ForgotPassword {
+  ok: Boolean
+}
+
+input InputID {
+  id: ID!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""The `Long` scalar type represents 52-bit integers"""
+scalar Long
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | ForgotPassword | NewsItems | NewsItemsConnection | NewsItemsAggregator | NewsItemsGroupBy | NewsItemsConnectionId | NewsItemsConnectionCreated_at | NewsItemsConnectionUpdated_at | NewsItemsConnectionTitle | NewsItemsConnectionArticle | NewsItemsConnectionUnit | createNewsItemPayload | updateNewsItemPayload | deleteNewsItemPayload | ResourceCategories | ResourceCategoriesConnection | ResourceCategoriesAggregator | ResourceCategoriesGroupBy | ResourceCategoriesConnectionId | ResourceCategoriesConnectionCreated_at | ResourceCategoriesConnectionUpdated_at | ResourceCategoriesConnectionName | ResourceCategoriesConnectionUnit | createResourceCategoryPayload | updateResourceCategoryPayload | deleteResourceCategoryPayload | ResourceEmails | ResourceEmailsConnection | ResourceEmailsAggregator | ResourceEmailsGroupBy | ResourceEmailsConnectionId | ResourceEmailsConnectionCreated_at | ResourceEmailsConnectionUpdated_at | ResourceEmailsConnectionEmail | ResourceEmailsConnectionUnit_resrouce | createResourceEmailPayload | updateResourceEmailPayload | deleteResourceEmailPayload | ResourcePhones | ResourcePhonesConnection | ResourcePhonesAggregator | ResourcePhonesGroupBy | ResourcePhonesConnectionId | ResourcePhonesConnectionCreated_at | ResourcePhonesConnectionUpdated_at | ResourcePhonesConnectionPhone_number | ResourcePhonesConnectionUnit_resrouce | createResourcePhonePayload | updateResourcePhonePayload | deleteResourcePhonePayload | UnitResrouces | UnitResroucesConnection | UnitResroucesAggregator | UnitResroucesGroupBy | UnitResroucesConnectionId | UnitResroucesConnectionCreated_at | UnitResroucesConnectionUpdated_at | UnitResroucesConnectionName | UnitResroucesConnectionDetails | UnitResroucesConnectionResource_category | createUnitResroucePayload | updateUnitResroucePayload | deleteUnitResroucePayload | Units | UnitsConnection | UnitsAggregator | UnitsGroupBy | UnitsConnectionId | UnitsConnectionCreated_at | UnitsConnectionUpdated_at | UnitsConnectionUnit_name | UnitsConnectionUnit_name_long | createUnitPayload | updateUnitPayload | deleteUnitPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | createFilePayload | updateFilePayload | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
+
+type Mutation {
+  createNewsItem(input: createNewsItemInput): createNewsItemPayload
+  updateNewsItem(input: updateNewsItemInput): updateNewsItemPayload
+  deleteNewsItem(input: deleteNewsItemInput): deleteNewsItemPayload
+  createResourceCategory(input: createResourceCategoryInput): createResourceCategoryPayload
+  updateResourceCategory(input: updateResourceCategoryInput): updateResourceCategoryPayload
+  deleteResourceCategory(input: deleteResourceCategoryInput): deleteResourceCategoryPayload
+  createResourceEmail(input: createResourceEmailInput): createResourceEmailPayload
+  updateResourceEmail(input: updateResourceEmailInput): updateResourceEmailPayload
+  deleteResourceEmail(input: deleteResourceEmailInput): deleteResourceEmailPayload
+  createResourcePhone(input: createResourcePhoneInput): createResourcePhonePayload
+  updateResourcePhone(input: updateResourcePhoneInput): updateResourcePhonePayload
+  deleteResourcePhone(input: deleteResourcePhoneInput): deleteResourcePhonePayload
+  createUnitResrouce(input: createUnitResrouceInput): createUnitResroucePayload
+  updateUnitResrouce(input: updateUnitResrouceInput): updateUnitResroucePayload
+  deleteUnitResrouce(input: deleteUnitResrouceInput): deleteUnitResroucePayload
+  createUnit(input: createUnitInput): createUnitPayload
+  updateUnit(input: updateUnitInput): updateUnitPayload
+  deleteUnit(input: deleteUnitInput): deleteUnitPayload
+
+  """Create a new role"""
+  createRole(input: createRoleInput): createRolePayload
+
+  """Update an existing role"""
+  updateRole(input: updateRoleInput): updateRolePayload
+
+  """Delete an existing role"""
+  deleteRole(input: deleteRoleInput): deleteRolePayload
+
+  """Create a new user"""
+  createUser(input: createUserInput): createUserPayload
+
+  """Update an existing user"""
+  updateUser(input: updateUserInput): updateUserPayload
+
+  """Delete an existing user"""
+  deleteUser(input: deleteUserInput): deleteUserPayload
+  upload(refId: ID, ref: String, field: String, source: String, file: Upload!): UploadFile!
+  multipleUpload(refId: ID, ref: String, field: String, source: String, files: [Upload]!): [UploadFile]!
+  login(input: UsersPermissionsLoginInput!): UsersPermissionsLoginPayload!
+  register(input: UserInput!): UsersPermissionsLoginPayload!
+  forgotPassword(email: String!): ForgotPassword
+  changePassword(password: String!, passwordConfirmation: String!, code: String!): UsersPermissionsLoginPayload
+  emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
+}
+
+input NewsItemInput {
+  title: String
+  article: String
+  unit: ID
+}
+
+type NewsItems {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  title: String
+  article: String
+  unit: Units
+}
+
+type NewsItemsAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type NewsItemsConnection {
+  values: [NewsItems]
+  groupBy: NewsItemsGroupBy
+  aggregate: NewsItemsAggregator
+}
+
+type NewsItemsConnectionArticle {
+  key: String
+  connection: NewsItemsConnection
+}
+
+type NewsItemsConnectionCreated_at {
+  key: DateTime
+  connection: NewsItemsConnection
+}
+
+type NewsItemsConnectionId {
+  key: ID
+  connection: NewsItemsConnection
+}
+
+type NewsItemsConnectionTitle {
+  key: String
+  connection: NewsItemsConnection
+}
+
+type NewsItemsConnectionUnit {
+  key: ID
+  connection: NewsItemsConnection
+}
+
+type NewsItemsConnectionUpdated_at {
+  key: DateTime
+  connection: NewsItemsConnection
+}
+
+type NewsItemsGroupBy {
+  id: [NewsItemsConnectionId]
+  created_at: [NewsItemsConnectionCreated_at]
+  updated_at: [NewsItemsConnectionUpdated_at]
+  title: [NewsItemsConnectionTitle]
+  article: [NewsItemsConnectionArticle]
+  unit: [NewsItemsConnectionUnit]
+}
+
+type Query {
+  newsItem(id: ID!): NewsItems
+  newsItems(sort: String, limit: Int, start: Int, where: JSON): [NewsItems]
+  newsItemsConnection(sort: String, limit: Int, start: Int, where: JSON): NewsItemsConnection
+  resourceCategory(id: ID!): ResourceCategories
+  resourceCategories(sort: String, limit: Int, start: Int, where: JSON): [ResourceCategories]
+  resourceCategoriesConnection(sort: String, limit: Int, start: Int, where: JSON): ResourceCategoriesConnection
+  resourceEmail(id: ID!): ResourceEmails
+  resourceEmails(sort: String, limit: Int, start: Int, where: JSON): [ResourceEmails]
+  resourceEmailsConnection(sort: String, limit: Int, start: Int, where: JSON): ResourceEmailsConnection
+  resourcePhone(id: ID!): ResourcePhones
+  resourcePhones(sort: String, limit: Int, start: Int, where: JSON): [ResourcePhones]
+  resourcePhonesConnection(sort: String, limit: Int, start: Int, where: JSON): ResourcePhonesConnection
+  unitResrouce(id: ID!): UnitResrouces
+  unitResrouces(sort: String, limit: Int, start: Int, where: JSON): [UnitResrouces]
+  unitResroucesConnection(sort: String, limit: Int, start: Int, where: JSON): UnitResroucesConnection
+  unit(id: ID!): Units
+  units(sort: String, limit: Int, start: Int, where: JSON): [Units]
+  unitsConnection(sort: String, limit: Int, start: Int, where: JSON): UnitsConnection
+  files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
+  role(id: ID!): UsersPermissionsRole
+
+  """
+  Retrieve all the existing roles. You can't apply filters on this query.
+  """
+  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]
+  rolesConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsRoleConnection
+  user(id: ID!): UsersPermissionsUser
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  usersConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsUserConnection
+  me: UsersPermissionsMe
+}
+
+type ResourceCategories {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String
+  unit: Units
+  unit_resources(sort: String, limit: Int, start: Int, where: JSON): [UnitResrouces]
+}
+
+type ResourceCategoriesAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type ResourceCategoriesConnection {
+  values: [ResourceCategories]
+  groupBy: ResourceCategoriesGroupBy
+  aggregate: ResourceCategoriesAggregator
+}
+
+type ResourceCategoriesConnectionCreated_at {
+  key: DateTime
+  connection: ResourceCategoriesConnection
+}
+
+type ResourceCategoriesConnectionId {
+  key: ID
+  connection: ResourceCategoriesConnection
+}
+
+type ResourceCategoriesConnectionName {
+  key: String
+  connection: ResourceCategoriesConnection
+}
+
+type ResourceCategoriesConnectionUnit {
+  key: ID
+  connection: ResourceCategoriesConnection
+}
+
+type ResourceCategoriesConnectionUpdated_at {
+  key: DateTime
+  connection: ResourceCategoriesConnection
+}
+
+type ResourceCategoriesGroupBy {
+  id: [ResourceCategoriesConnectionId]
+  created_at: [ResourceCategoriesConnectionCreated_at]
+  updated_at: [ResourceCategoriesConnectionUpdated_at]
+  name: [ResourceCategoriesConnectionName]
+  unit: [ResourceCategoriesConnectionUnit]
+}
+
+input ResourceCategoryInput {
+  name: String
+  unit: ID
+  unit_resources: [ID]
+}
+
+input ResourceEmailInput {
+  email: String!
+  unit_resrouce: ID
+}
+
+type ResourceEmails {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  email: String!
+  unit_resrouce: UnitResrouces
+}
+
+type ResourceEmailsAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type ResourceEmailsConnection {
+  values: [ResourceEmails]
+  groupBy: ResourceEmailsGroupBy
+  aggregate: ResourceEmailsAggregator
+}
+
+type ResourceEmailsConnectionCreated_at {
+  key: DateTime
+  connection: ResourceEmailsConnection
+}
+
+type ResourceEmailsConnectionEmail {
+  key: String
+  connection: ResourceEmailsConnection
+}
+
+type ResourceEmailsConnectionId {
+  key: ID
+  connection: ResourceEmailsConnection
+}
+
+type ResourceEmailsConnectionUnit_resrouce {
+  key: ID
+  connection: ResourceEmailsConnection
+}
+
+type ResourceEmailsConnectionUpdated_at {
+  key: DateTime
+  connection: ResourceEmailsConnection
+}
+
+type ResourceEmailsGroupBy {
+  id: [ResourceEmailsConnectionId]
+  created_at: [ResourceEmailsConnectionCreated_at]
+  updated_at: [ResourceEmailsConnectionUpdated_at]
+  email: [ResourceEmailsConnectionEmail]
+  unit_resrouce: [ResourceEmailsConnectionUnit_resrouce]
+}
+
+input ResourcePhoneInput {
+  phone_number: String
+  unit_resrouce: ID
+}
+
+type ResourcePhones {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  phone_number: String
+  unit_resrouce: UnitResrouces
+}
+
+type ResourcePhonesAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type ResourcePhonesConnection {
+  values: [ResourcePhones]
+  groupBy: ResourcePhonesGroupBy
+  aggregate: ResourcePhonesAggregator
+}
+
+type ResourcePhonesConnectionCreated_at {
+  key: DateTime
+  connection: ResourcePhonesConnection
+}
+
+type ResourcePhonesConnectionId {
+  key: ID
+  connection: ResourcePhonesConnection
+}
+
+type ResourcePhonesConnectionPhone_number {
+  key: String
+  connection: ResourcePhonesConnection
+}
+
+type ResourcePhonesConnectionUnit_resrouce {
+  key: ID
+  connection: ResourcePhonesConnection
+}
+
+type ResourcePhonesConnectionUpdated_at {
+  key: DateTime
+  connection: ResourcePhonesConnection
+}
+
+type ResourcePhonesGroupBy {
+  id: [ResourcePhonesConnectionId]
+  created_at: [ResourcePhonesConnectionCreated_at]
+  updated_at: [ResourcePhonesConnectionUpdated_at]
+  phone_number: [ResourcePhonesConnectionPhone_number]
+  unit_resrouce: [ResourcePhonesConnectionUnit_resrouce]
+}
+
+input RoleInput {
+  name: String!
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+}
+
+"""A time string with format: HH:mm:ss.SSS"""
+scalar Time
+
+input UnitInput {
+  unit_name: String!
+  unit_name_long: String
+  news_items: [ID]
+  resource_categories: [ID]
+  invite_code: String
+}
+
+input UnitResrouceInput {
+  name: String
+  details: String
+  resource_category: ID
+  resource_emails: [ID]
+  resource_phones: [ID]
+}
+
+type UnitResrouces {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String
+  details: String
+  resource_category: ResourceCategories
+  resource_emails(sort: String, limit: Int, start: Int, where: JSON): [ResourceEmails]
+  resource_phones(sort: String, limit: Int, start: Int, where: JSON): [ResourcePhones]
+}
+
+type UnitResroucesAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UnitResroucesConnection {
+  values: [UnitResrouces]
+  groupBy: UnitResroucesGroupBy
+  aggregate: UnitResroucesAggregator
+}
+
+type UnitResroucesConnectionCreated_at {
+  key: DateTime
+  connection: UnitResroucesConnection
+}
+
+type UnitResroucesConnectionDetails {
+  key: String
+  connection: UnitResroucesConnection
+}
+
+type UnitResroucesConnectionId {
+  key: ID
+  connection: UnitResroucesConnection
+}
+
+type UnitResroucesConnectionName {
+  key: String
+  connection: UnitResroucesConnection
+}
+
+type UnitResroucesConnectionResource_category {
+  key: ID
+  connection: UnitResroucesConnection
+}
+
+type UnitResroucesConnectionUpdated_at {
+  key: DateTime
+  connection: UnitResroucesConnection
+}
+
+type UnitResroucesGroupBy {
+  id: [UnitResroucesConnectionId]
+  created_at: [UnitResroucesConnectionCreated_at]
+  updated_at: [UnitResroucesConnectionUpdated_at]
+  name: [UnitResroucesConnectionName]
+  details: [UnitResroucesConnectionDetails]
+  resource_category: [UnitResroucesConnectionResource_category]
+}
+
+type Units {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  unit_name: String!
+  unit_name_long: String
+  news_items(sort: String, limit: Int, start: Int, where: JSON): [NewsItems]
+  resource_categories(sort: String, limit: Int, start: Int, where: JSON): [ResourceCategories]
+}
+
+type UnitsAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UnitsConnection {
+  values: [Units]
+  groupBy: UnitsGroupBy
+  aggregate: UnitsAggregator
+}
+
+type UnitsConnectionCreated_at {
+  key: DateTime
+  connection: UnitsConnection
+}
+
+type UnitsConnectionId {
+  key: ID
+  connection: UnitsConnection
+}
+
+type UnitsConnectionUnit_name {
+  key: String
+  connection: UnitsConnection
+}
+
+type UnitsConnectionUnit_name_long {
+  key: String
+  connection: UnitsConnection
+}
+
+type UnitsConnectionUpdated_at {
+  key: DateTime
+  connection: UnitsConnection
+}
+
+type UnitsGroupBy {
+  id: [UnitsConnectionId]
+  created_at: [UnitsConnectionCreated_at]
+  updated_at: [UnitsConnectionUpdated_at]
+  unit_name: [UnitsConnectionUnit_name]
+  unit_name_long: [UnitsConnectionUnit_name_long]
+}
+
+input updateFileInput {
+  where: InputID
+  data: editFileInput
+}
+
+type updateFilePayload {
+  file: UploadFile
+}
+
+input updateNewsItemInput {
+  where: InputID
+  data: editNewsItemInput
+}
+
+type updateNewsItemPayload {
+  newsItem: NewsItems
+}
+
+input updateResourceCategoryInput {
+  where: InputID
+  data: editResourceCategoryInput
+}
+
+type updateResourceCategoryPayload {
+  resourceCategory: ResourceCategories
+}
+
+input updateResourceEmailInput {
+  where: InputID
+  data: editResourceEmailInput
+}
+
+type updateResourceEmailPayload {
+  resourceEmail: ResourceEmails
+}
+
+input updateResourcePhoneInput {
+  where: InputID
+  data: editResourcePhoneInput
+}
+
+type updateResourcePhonePayload {
+  resourcePhone: ResourcePhones
+}
+
+input updateRoleInput {
+  where: InputID
+  data: editRoleInput
+}
+
+type updateRolePayload {
+  role: UsersPermissionsRole
+}
+
+input updateUnitInput {
+  where: InputID
+  data: editUnitInput
+}
+
+type updateUnitPayload {
+  unit: Units
+}
+
+input updateUnitResrouceInput {
+  where: InputID
+  data: editUnitResrouceInput
+}
+
+type updateUnitResroucePayload {
+  unitResrouce: UnitResrouces
+}
+
+input updateUserInput {
+  where: InputID
+  data: editUserInput
+}
+
+type updateUserPayload {
+  user: UsersPermissionsUser
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type UploadFile {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String!
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
+}
+
+type UploadFileAggregator {
+  count: Int
+  totalCount: Int
+  sum: UploadFileAggregatorSum
+  avg: UploadFileAggregatorAvg
+  min: UploadFileAggregatorMin
+  max: UploadFileAggregatorMax
+}
+
+type UploadFileAggregatorAvg {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorMax {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorMin {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorSum {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileConnection {
+  values: [UploadFile]
+  groupBy: UploadFileGroupBy
+  aggregate: UploadFileAggregator
+}
+
+type UploadFileConnectionAlternativeText {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCaption {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCreated_at {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionExt {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionFormats {
+  key: JSON
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHash {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHeight {
+  key: Int
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionId {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionMime {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionName {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionPreviewUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider_metadata {
+  key: JSON
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionSize {
+  key: Float
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUpdated_at {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionWidth {
+  key: Int
+  connection: UploadFileConnection
+}
+
+type UploadFileGroupBy {
+  id: [UploadFileConnectionId]
+  created_at: [UploadFileConnectionCreated_at]
+  updated_at: [UploadFileConnectionUpdated_at]
+  name: [UploadFileConnectionName]
+  alternativeText: [UploadFileConnectionAlternativeText]
+  caption: [UploadFileConnectionCaption]
+  width: [UploadFileConnectionWidth]
+  height: [UploadFileConnectionHeight]
+  formats: [UploadFileConnectionFormats]
+  hash: [UploadFileConnectionHash]
+  ext: [UploadFileConnectionExt]
+  mime: [UploadFileConnectionMime]
+  size: [UploadFileConnectionSize]
+  url: [UploadFileConnectionUrl]
+  previewUrl: [UploadFileConnectionPreviewUrl]
+  provider: [UploadFileConnectionProvider]
+  provider_metadata: [UploadFileConnectionProvider_metadata]
+}
+
+input UserInput {
+  username: String!
+  email: String!
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+}
+
+input UsersPermissionsLoginInput {
+  identifier: String!
+  password: String!
+  provider: String = "local"
+}
+
+type UsersPermissionsLoginPayload {
+  jwt: String!
+  user: UsersPermissionsMe!
+}
+
+type UsersPermissionsMe {
+  id: ID!
+  username: String!
+  email: String!
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsMeRole
+}
+
+type UsersPermissionsMeRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+}
+
+type UsersPermissionsPermission {
+  id: ID!
+  type: String!
+  controller: String!
+  action: String!
+  enabled: Boolean!
+  policy: String
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+}
+
+type UsersPermissionsRoleAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsRoleConnection {
+  values: [UsersPermissionsRole]
+  groupBy: UsersPermissionsRoleGroupBy
+  aggregate: UsersPermissionsRoleAggregator
+}
+
+type UsersPermissionsRoleConnectionDescription {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionId {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionName {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionType {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleGroupBy {
+  id: [UsersPermissionsRoleConnectionId]
+  name: [UsersPermissionsRoleConnectionName]
+  description: [UsersPermissionsRoleConnectionDescription]
+  type: [UsersPermissionsRoleConnectionType]
+}
+
+type UsersPermissionsUser {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  username: String!
+  email: String!
+  provider: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsUserAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsUserConnection {
+  values: [UsersPermissionsUser]
+  groupBy: UsersPermissionsUserGroupBy
+  aggregate: UsersPermissionsUserAggregator
+}
+
+type UsersPermissionsUserConnectionBlocked {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionConfirmed {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionCreated_at {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionEmail {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionId {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionProvider {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionRole {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUpdated_at {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUsername {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserGroupBy {
+  id: [UsersPermissionsUserConnectionId]
+  created_at: [UsersPermissionsUserConnectionCreated_at]
+  updated_at: [UsersPermissionsUserConnectionUpdated_at]
+  username: [UsersPermissionsUserConnectionUsername]
+  email: [UsersPermissionsUserConnectionEmail]
+  provider: [UsersPermissionsUserConnectionProvider]
+  confirmed: [UsersPermissionsUserConnectionConfirmed]
+  blocked: [UsersPermissionsUserConnectionBlocked]
+  role: [UsersPermissionsUserConnectionRole]
+}
