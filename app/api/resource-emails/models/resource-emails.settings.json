@@ -12,9 +12,6 @@
     "email": {
       "type": "string",
       "required": true
-    },
-    "unit_resrouce": {
-      "model": "unit-resrouces"
     }
   }
 }
