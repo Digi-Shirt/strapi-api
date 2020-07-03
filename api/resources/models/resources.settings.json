@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "unit_resrouces",
+  "collectionName": "resources",
   "info": {
-    "name": "unit_resources"
+    "name": "resources"
   },
   "options": {
     "increments": true,
@@ -15,13 +15,10 @@
     "details": {
       "type": "text"
     },
-    "resource_category": {
-      "model": "resource-categories"
-    },
     "resource_emails": {
       "collection": "resource-emails"
     },
-    "resource_phones": {
+    "phones": {
       "collection": "resource-phones"
     }
   }
