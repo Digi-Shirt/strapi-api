@@ -24,7 +24,7 @@
     },
     "invite_code": {
       "type": "string",
-      "private": true
+      "private": false
     }
   }
 }

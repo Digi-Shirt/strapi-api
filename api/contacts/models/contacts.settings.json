@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "resource_categories",
+  "collectionName": "contacts",
   "info": {
-    "name": "resource_categories"
+    "name": "Contacts"
   },
   "options": {
     "increments": true,
@@ -12,11 +12,15 @@
     "name": {
       "type": "string"
     },
+    "role": {
+      "type": "string"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
     "unit": {
       "model": "units"
-    },
-    "resources": {
-      "collection": "resources"
     }
   }
 }

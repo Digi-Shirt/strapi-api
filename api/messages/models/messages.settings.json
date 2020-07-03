@@ -1,22 +1,23 @@
 {
   "kind": "collectionType",
-  "collectionName": "resource_categories",
+  "collectionName": "messages",
   "info": {
-    "name": "resource_categories"
+    "name": "messages"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "name": {
+    "from": {
       "type": "string"
     },
-    "unit": {
-      "model": "units"
+    "text": {
+      "type": "richtext"
     },
-    "resources": {
-      "collection": "resources"
+    "to": {
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }
