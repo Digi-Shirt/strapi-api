@@ -20,6 +20,9 @@
     },
     "phones": {
       "collection": "resource-phones"
+    },
+    "resource_category": {
+      "model": "resource-categories"
     }
   }
 }

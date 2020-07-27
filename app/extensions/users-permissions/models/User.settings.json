@@ -52,6 +52,17 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
+    },
+    "profile_picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }
