@@ -20,12 +20,9 @@
     },
     "phones": {
       "collection": "resource-phones"
-<<<<<<< HEAD
-=======
     },
     "resource_category": {
       "model": "resource-categories"
->>>>>>> changed dir structure
     }
   }
 }

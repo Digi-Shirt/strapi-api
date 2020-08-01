@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "app",
-=======
   "name": "digi-shirt-api",
->>>>>>> changed dir structure
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -16,19 +12,6 @@
   "devDependencies": {},
   "dependencies": {
     "knex": "<0.20.0",
-<<<<<<< HEAD
-    "pg": "^8.2.1",
-    "strapi": "3.0.0-beta.20",
-    "strapi-admin": "3.0.0-beta.20",
-    "strapi-connector-bookshelf": "3.0.0-beta.20",
-    "strapi-plugin-content-manager": "3.0.0-beta.20",
-    "strapi-plugin-content-type-builder": "3.0.0-beta.20",
-    "strapi-plugin-email": "3.0.0-beta.20",
-    "strapi-plugin-graphql": "3.0.0-beta.20",
-    "strapi-plugin-upload": "3.0.0-beta.20",
-    "strapi-plugin-users-permissions": "3.0.0-beta.20",
-    "strapi-utils": "3.0.0-beta.20"
-=======
     "sqlite3": "latest",
     "strapi": "3.1.2",
     "strapi-admin": "3.1.2",
@@ -40,17 +23,12 @@
     "strapi-plugin-upload": "3.1.2",
     "strapi-plugin-users-permissions": "3.1.2",
     "strapi-utils": "3.1.2"
->>>>>>> changed dir structure
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-<<<<<<< HEAD
-    "uuid": "cedbf59c-dc0b-4d49-bd72-20275e3f73c3"
-=======
     "uuid": "7b50efcf-1a69-4046-b5e7-719d0265af79"
->>>>>>> changed dir structure
   },
   "engines": {
     "node": ">=10.0.0",

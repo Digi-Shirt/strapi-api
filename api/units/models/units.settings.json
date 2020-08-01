@@ -25,8 +25,6 @@
     "invite_code": {
       "type": "string",
       "private": false
-<<<<<<< HEAD
-=======
     },
     "image": {
       "model": "file",
@@ -38,7 +36,6 @@
       ],
       "plugin": "upload",
       "required": false
->>>>>>> changed dir structure
     }
   }
 }
