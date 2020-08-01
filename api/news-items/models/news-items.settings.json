@@ -17,6 +17,8 @@
     },
     "unit": {
       "model": "units"
+<<<<<<< HEAD
+=======
     },
     "images": {
       "collection": "file",
@@ -28,6 +30,7 @@
       ],
       "plugin": "upload",
       "required": false
+>>>>>>> changed dir structure
     }
   }
 }
