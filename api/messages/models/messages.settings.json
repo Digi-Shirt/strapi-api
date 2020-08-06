@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "name": "messages"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "from": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "to": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

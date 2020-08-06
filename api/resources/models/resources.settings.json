@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resources",
+  "info": {
+    "name": "resources"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
+    },
+    "resource_emails": {
+      "collection": "resource-emails"
+    },
+    "phones": {
+      "collection": "resource-phones"
+    },
+    "resource_category": {
+      "model": "resource-categories"
+    }
+  }
+}
